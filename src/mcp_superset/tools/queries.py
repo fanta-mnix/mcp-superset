@@ -99,7 +99,7 @@ def register_query_tools(mcp):
         IMPORTANT: before executing, make sure the SQL query is correct.
         Use superset_database_table_metadata or superset_database_tables
         to find actual table and column names.
-        Maximum 1000 rows in the result (queryLimit).
+        Maximum 50000 rows in the result (queryLimit).
 
         Args:
             database_id: Database connection ID (from superset_database_list).
@@ -137,7 +137,7 @@ def register_query_tools(mcp):
             "database_id": database_id,
             "sql": sql,
             "runAsync": False,
-            "queryLimit": 1000,
+            "queryLimit": 50000,
         }
         if schema is not None:
             payload["schema"] = schema
