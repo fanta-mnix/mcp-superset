@@ -18,7 +18,7 @@ class SupersetClient:
         self.auth = auth_manager
         self.base_url = base_url.rstrip("/")
         self._client = httpx.AsyncClient(
-            timeout=httpx.Timeout(60.0, connect=10.0),
+            timeout=httpx.Timeout(600.0, connect=10.0),
             follow_redirects=True,
         )
 
